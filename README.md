@@ -1,6 +1,6 @@
 # 🚗 Sistema de Cadastro de Carros
 
-Sistema web simples desenvolvido em PHP com MySQL para gerenciamento de cadastro de veículos.
+Sistema web simples desenvolvido em PHP com MySQL, rodando em ambiente Docker.
 
 ---
 
@@ -8,38 +8,47 @@ Sistema web simples desenvolvido em PHP com MySQL para gerenciamento de cadastro
 
 - Cadastro de carros (CREATE)
 - Listagem de carros (READ)
-- Estrutura preparada para expansão (update/delete futuramente)
+- Estrutura preparada para futuras melhorias (UPDATE/DELETE)
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 🐳 Tecnologias utilizadas
 
 - PHP
 - MySQL
-- XAMPP
-- Apache
+- Docker
+- Docker Compose
+- Apache (via container)
 
 ---
 
 ## ⚙️ Como executar o projeto
 
-1. Clone ou baixe o repositório  
-2. Coloque a pasta do projeto dentro de:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Arthursooares/sistema-carros-php.git
 
-htdocs (XAMPP)
+Acesse a pasta do projeto:
 
-3. Inicie o **Apache** e o **MySQL** no XAMPP  
-4. Importe o banco de dados no phpMyAdmin (se houver arquivo .sql)  
-5. Acesse no navegador:
+cd sistema-carros-php
 
-http://localhost/carros
+Suba os containers:
 
+docker-compose up -d
 
----
+Acesse no navegador:
 
-## 🚀 Melhorias futuras
-
-- Editar e excluir carros
-- Validação de formulários
-- Interface mais moderna (Bootstrap)
-- API REST com PHP
+http://localhost
+📁 Estrutura do projeto
+/sistema-carros-php
+ ├── /src
+ ├── /db
+ ├── Dockerfile
+ ├── docker-compose.yml
+ └── README.md
+🚀 Melhorias futuras
+Edição e exclusão de registros
+Validação de formulários
+Interface com Bootstrap
+API REST em PHP
+Autenticação de usuários
