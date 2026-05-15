@@ -24,7 +24,7 @@ Docker Compose
 🚀 Como executar o projeto
 1. Clone o repositório
 bash
-git clone https://github.com/arthursoaress/sistema-carros-php.git
+git clone https://github.com/arthursooares/sistema-carros-php.git
 2. Acesse a pasta do projeto
 bash
 cd sistema-carros-php
