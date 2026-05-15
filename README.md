@@ -1,54 +1,71 @@
 # 🚗 Sistema de Cadastro de Carros
 
-Sistema web simples desenvolvido em PHP com MySQL, rodando em ambiente Docker.
+Sistema web desenvolvido em PHP com MySQL, totalmente dockerizado com Docker Compose.
 
 ---
 
 ## 📌 Funcionalidades
 
-- Cadastro de carros (CREATE)
-- Listagem de carros (READ)
-- Estrutura preparada para futuras melhorias (UPDATE/DELETE)
+- Cadastro de carros
+- Listagem de carros
+- Banco de dados automatizado com MySQL
+- Ambiente totalmente containerizado
 
 ---
 
 ## 🐳 Tecnologias utilizadas
 
-- PHP
-- MySQL
+- PHP 8.2
+- MySQL 8
+- Apache
 - Docker
 - Docker Compose
-- Apache (via container)
 
 ---
 
-## ⚙️ Como executar o projeto
+## 🚀 Como executar o projeto
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Arthursooares/sistema-carros-php.git
+### 1. Clone o repositório
 
-Acesse a pasta do projeto:
-
+```bash
+git clone https://github.com/arthursoaress/sistema-carros-php.git
+2. Acesse a pasta do projeto
 cd sistema-carros-php
+3. Suba os containers
+docker compose up --build
+4. Acesse no navegador
+http://localhost:8080
+🗄️ Banco de dados
 
-Suba os containers:
+O banco é criado automaticamente através do arquivo:
 
-docker-compose up -d
+mysql/init.sql
 
-Acesse no navegador:
+Não é necessário instalar MySQL manualmente.
 
-http://localhost
 📁 Estrutura do projeto
-/sistema-carros-php
- ├── /src
- ├── /db
- ├── Dockerfile
- ├── docker-compose.yml
- └── README.md
+sistema-carros-php
+│
+├── mysql/
+│   └── init.sql
+│
+├── Dockerfile
+├── docker-compose.yml
+├── index.php
+└── README.md
+🐳 Docker Hub
+
+Imagem disponível em:
+
+docker pull arthursoaress/sistema-carros-php:latest
 🚀 Melhorias futuras
-Edição e exclusão de registros
-Validação de formulários
-Interface com Bootstrap
-API REST em PHP
-Autenticação de usuários
+Editar carros
+Excluir carros
+Utilização de .env
+Persistência com volumes
+Integração com phpMyAdmin
+API REST
+Deploy em nuvem
+👨‍💻 Autor
+
+Arthur Soares
