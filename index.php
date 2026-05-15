@@ -1,8 +1,16 @@
 <?php
-$conn = new mysqli("mysql", "root", "root", "bd");
+
+$host = "db";          // nome do serviço do banco no docker-compose
+$user = "root";        // usuário do banco
+$pass = "root";        // senha do banco
+$db   = "projeto";     // nome do banco definido no Dockerfile/init.sql
+
+$conn = new mysqli($host, $user, $pass, $db);
+
 if ($conn->connect_error) {
     die("Erro de conexão: " . $conn->connect_error);
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $modelo = $_POST["modelo"];

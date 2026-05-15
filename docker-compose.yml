@@ -1,15 +1,35 @@
+version: '3'
 services:
-  php:
-    build: .
-    ports:
-      - "8080:80"
-    depends_on:
-      - mysql
-
-  mysql:
-    image: mysql:8.0
+  db:
+    build: ./mysql
+    container_name: meu_banco
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: bd
+      MYSQL_DATABASE: projeto
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3307:3306"
     volumes:
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - appnet
+
+  app:
+    build: .
+    container_name: minha_tela
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS: root
+    ports:
+      - "8080:80"
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
