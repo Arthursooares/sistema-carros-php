@@ -1,6 +1,5 @@
 <?php
-$conn = new mysqli("127.0.0.1", "root", "", "bd");
-
+$conn = new mysqli("mysql", "root", "root", "bd");
 if ($conn->connect_error) {
     die("Erro de conexão: " . $conn->connect_error);
 }
@@ -250,7 +249,7 @@ $result = $conn->query("SELECT * FROM tbCarro");
                             <tbody>
                                 <?php while ($row = $result->fetch_assoc()) : ?>
                                     <tr>
-                                        <td><?php echo $row["idCarro"]; ?></td>
+                                        <td><?php echo $row["id"]; ?></td>
                                         <td><?php echo $row["modelo"]; ?></td>
                                         <td><?php echo $row["cor"]; ?></td>
                                         <td>R$ <?php echo number_format($row["valor"], 2, ",", "."); ?></td>
